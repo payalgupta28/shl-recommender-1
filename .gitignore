@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+
+# Local secrets & logs
+.env
+server.log
+scrape.log
+
+# OS
+.DS_Store

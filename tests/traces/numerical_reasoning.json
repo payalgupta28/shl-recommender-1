@@ -1,0 +1,12 @@
+{
+  "name": "numerical_reasoning",
+  "persona": "A graduate-scheme recruiter who wants a general numerical reasoning / aptitude screen.",
+  "user_turns": [
+    "I want to test numerical reasoning and general cognitive ability for graduate applicants"
+  ],
+  "expected": [
+    "SHL Verify Interactive – Numerical Reasoning",
+    "Verify - Numerical Ability",
+    "SHL Verify Interactive G+"
+  ]
+}

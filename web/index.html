@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHL Assessment Recommender</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">SHL<span class="dot">.</span></span>
+      <span class="title">Assessment Recommender</span>
+    </div>
+    <div class="meta">
+      <span class="status" id="status"><span class="ring"></span> online</span>
+      <span class="pill pill-new">New</span>
+      <button id="settingsBtn" class="iconbtn" title="Settings">⚙</button>
+    </div>
+  </header>
+
+  <!-- Settings drawer (hidden by default; auto-hidden when server has a key) -->
+  <aside id="settings" class="drawer" hidden>
+    <h3>Connect an AI provider <small>(free tier)</small></h3>
+    <p class="hint">Your key stays in this browser and is sent as a request header.</p>
+    <label>Provider
+      <select id="provider">
+        <option value="groq">Groq</option>
+        <option value="gemini" selected>Google Gemini</option>
+        <option value="openrouter">OpenRouter</option>
+      </select>
+    </label>
+    <label>Model <input id="model" type="text" placeholder="auto" /></label>
+    <label>API key <input id="apiKey" type="password" placeholder="paste your key" /></label>
+    <div class="drawer-actions">
+      <button id="saveKey">Save</button>
+      <span id="keyStatus" class="muted"></span>
+    </div>
+    <p class="muted small">
+      Free keys:
+      <a href="https://console.groq.com/keys" target="_blank">Groq</a> ·
+      <a href="https://aistudio.google.com/apikey" target="_blank">Gemini</a> ·
+      <a href="https://openrouter.ai/keys" target="_blank">OpenRouter</a>
+    </p>
+  </aside>
+
+  <main class="stage">
+    <!-- Empty-state hero shown until the first user message -->
+    <section id="hero" class="hero">
+      <h1>Describe a role, seniority level, and hiring goal —<br>
+          I'll recommend the right assessment battery.</h1>
+      <div class="examples">
+        <div class="examples-label">Example prompts</div>
+        <button class="chip" data-q="Hiring a mid-level Java developer who works with stakeholders, ~4 years">Java developer + stakeholders</button>
+        <button class="chip" data-q="Looking to assess a data engineer strong in Python and SQL">Data engineer · Python &amp; SQL</button>
+        <button class="chip" data-q="Graduate-scheme numerical reasoning and general cognitive ability">Graduate cognitive screen</button>
+        <button class="chip" data-q="What is the difference between OPQ32r and Verify numerical reasoning?">Compare OPQ32r vs Verify</button>
+      </div>
+    </section>
+
+    <!-- Conversation -->
+    <section id="chat" class="chat" hidden></section>
+  </main>
+
+  <!-- Composer pinned at bottom -->
+  <footer class="composer-wrap">
+    <form id="composer" class="composer">
+      <textarea id="input" rows="1" autocomplete="off"
+        placeholder="Describe a role, seniority level, and hiring goal …"></textarea>
+      <button id="send" type="submit" title="Send" aria-label="Send">
+        <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true">
+          <path fill="currentColor" d="M2 10l16-7-4 17-4-7-8-3z"/>
+        </svg>
+      </button>
+    </form>
+    <div class="footnote">
+      <span class="hint-keys">Press <kbd>Enter</kbd> to send · <kbd>Shift</kbd>+<kbd>Enter</kbd> for new line</span>
+      <span class="turn-meter" id="turnMeter"></span>
+    </div>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

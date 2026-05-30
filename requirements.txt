@@ -1,0 +1,18 @@
+# ---- Web service ----
+fastapi==0.115.6          # the API framework (defines /health and /chat)
+uvicorn[standard]==0.34.0 # the ASGI server that actually runs FastAPI
+pydantic==2.10.4          # request/response validation -> guarantees the SHL schema
+
+# ---- Retrieval (offline, no API key needed) ----
+scikit-learn==1.6.1       # TF-IDF vectorizer + cosine similarity for catalog search
+numpy==2.2.1              # math backing scikit-learn
+
+# ---- LLM calls (the agent's "brain") ----
+httpx==0.28.1             # HTTP client used to call Gemini / Groq / OpenRouter
+truststore==0.10.1        # trust the OS cert store (fixes corporate-proxy TLS errors)
+
+# ---- Config & utilities ----
+python-dotenv==1.0.1      # load API keys / settings from a .env file
+
+# ---- Dev / testing ----
+pytest==8.3.4             # unit + behaviour tests

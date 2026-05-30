@@ -1,0 +1,13 @@
+{
+  "name": "data_engineer",
+  "persona": "A hiring manager looking for a data engineer comfortable with Python, SQL and data-science fundamentals.",
+  "user_turns": [
+    "We need to assess a data engineer",
+    "They should be strong in Python and SQL, and understand data science basics"
+  ],
+  "expected": [
+    "Python (New)",
+    "SQL (New)",
+    "Data Science (New)"
+  ]
+}

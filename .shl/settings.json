@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.shl.com)",
+      "Bash(python3 -m pip --version)",
+      "Bash(python3 scripts/scrape_catalog.py --max-pages 1 --no-descriptions)",
+      "Bash(python3 -c \"import json;d=json.load\\(open\\('data/catalog.json'\\)\\);print\\(len\\(d\\)\\);print\\(json.dumps\\(d[:2],indent=2\\)\\)\")",
+      "Bash(python3 scripts/scrape_catalog.py --workers 10)",
+      "Bash(echo \"EXIT $?\")",
+      "Bash(python3 -c \"import json;d=json.load\\(open\\('data/catalog.json'\\)\\);print\\('items:',len\\(d\\)\\);print\\('with desc:',sum\\(1 for x in d if x['description']\\)\\);import collections;print\\('types:',collections.Counter\\(t for x in d for t in x['test_type']\\)\\)\")"
+    ]
+  }
+}

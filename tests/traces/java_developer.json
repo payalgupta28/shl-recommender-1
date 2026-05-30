@@ -1,0 +1,15 @@
+{
+  "name": "java_developer",
+  "persona": "A recruiter hiring a mid-level Java backend developer who also coordinates with business stakeholders. Wants to verify hands-on Java skill plus communication/work style.",
+  "user_turns": [
+    "I'm hiring a Java developer who works with stakeholders",
+    "Mid-level, around 4 years of experience, backend focused",
+    "Yes, I'd also like to gauge their work style and how they communicate"
+  ],
+  "expected": [
+    "Java 8 (New)",
+    "Core Java (Advanced Level) (New)",
+    "Java Frameworks (New)",
+    "Occupational Personality Questionnaire OPQ32r"
+  ]
+}
