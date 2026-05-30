@@ -1,3 +1,14 @@
+---
+title: SHL Recommender
+emoji: 🎯
+colorFrom: blue
+colorTo: green
+sdk: docker
+pinned: false
+---
+
+# SHL Assessment Recommender
+Conversational AI agent for SHL assessment recommendations.
 # SHL Conversational Assessment Recommender
 
 A conversational agent that takes a recruiter from a **vague hiring intent**
